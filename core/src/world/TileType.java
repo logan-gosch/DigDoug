@@ -6,7 +6,8 @@ public enum TileType {
 
     /*
     Enum class meant to declare, run, and call assets dedicated to the Tile Map.
-    Types of tiles      */
+    Types of tiles
+    */
 
     GRASS(1, true, "grass"),
     DIRT(2, true, "dirt"),
@@ -24,6 +25,7 @@ public enum TileType {
     private float damage;
 
     //TileType constructors
+
     private TileType (int id, boolean collidable, String name){
         this(id, collidable, name, 0);
     }

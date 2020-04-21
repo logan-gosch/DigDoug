@@ -20,13 +20,13 @@ public abstract class GameMap {
         return this.getTileTypeByCoordinate(layer, (int) (x / TileType.TILE_SIZE), (int) (y / TileType.TILE_SIZE));
     }
 
-        /*
+    /*
     Gets a tile by pixel position within the game world at a specified layer.
     @parameter layer
     @parameter col
     @parameter row
     @return
-     */
+    */
 
     public abstract TileType getTileTypeByCoordinate(int layer, int col, int row);
 
