@@ -1,9 +1,11 @@
 package world;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+
 import custommap.CustomMapData;
 import custommap.CustomMapLoader;
 
@@ -22,13 +24,25 @@ public class CustomGameMap extends GameMap{
         this.name = data.name;
         this.map = data.map;
 
-        batch = new SpriteBatch();
-        tiles = TextureRegion.split(new Texture("tiles.png"), TileType.TILE_SIZE, TileType.TILE_SIZE);
+        /*batch = new SpriteBatch();*/
+        tiles = TextureRegion.split(new Texture( "tiles.png"), TileType.TILE_SIZE, TileType.TILE_SIZE);
     }
 
     @Override
     public void render(OrthographicCamera camera) {
+        batch.setProjectionMatrix(camera.combined);
+        batch.begin();
 
+        for(int layer = 0; layer < getLayers(); layer++){
+            for(int row = 0; row < getHeight(); row++){
+                for (int col = 0; col < getWidth(); col++){
+                    TileType type = this.getTileTypeByCoordinate(layer, col, row);
+                    if (type != null)
+                        batch.draw(tiles[0][type.getId() - 1], col * TileType.TILE_SIZE, row * TileType.TILE_SIZE);
+                }
+            }
+        }
+        batch.end();
     }
 
     @Override
@@ -38,7 +52,7 @@ public class CustomGameMap extends GameMap{
 
     @Override
     public void dispose() {
-
+        batch.dispose();
     }
 
     @Override
@@ -56,16 +70,16 @@ public class CustomGameMap extends GameMap{
 
     @Override
     public int getWidth() {
-        return 0;
+        return map[0][0].length;
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return map[0].length;
     }
 
     @Override
     public int getLayers() {
-        return 0;
+        return map.length;
     }
 }

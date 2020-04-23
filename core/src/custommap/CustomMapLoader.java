@@ -11,18 +11,31 @@ import static com.badlogic.gdx.net.HttpRequestBuilder.json;
 
 public class CustomMapLoader {
 
+    private static Json json = new Json();
     private static final int SIZE = 100;
 
-    public static CustomMapData loadMap(String id, String name){
+    public static CustomMapData loadMap (String id, String name) {
         Gdx.files.local("maps/").file().mkdirs();
         FileHandle file = Gdx.files.local("maps/" + id + ".map");
-        if (file.exists()){
-           CustomMapData data = json.fromJson(CustomMapData.class, file.readString());
-           return data;
+        if (file.exists()) {
+            CustomMapData data = json.fromJson(CustomMapData.class, file.readString());
+            return data;
         } else {
             CustomMapData data = generateRandomMap(id, name);
+            saveMap(data.id, data.name, data.map);
             return data;
         }
+    }
+
+    public static void saveMap (String id, String name, int[][][] map) {
+        CustomMapData data = new CustomMapData();
+        data.id = id;
+        data.name = name;
+        data.map = map;
+
+        Gdx.files.local("maps/").file().mkdirs();
+        FileHandle file = Gdx.files.local("maps/" + id + ".map");
+        file.writeString(json.prettyPrint(data), false);
     }
 
     public static CustomMapData generateRandomMap (String id, String name) {
