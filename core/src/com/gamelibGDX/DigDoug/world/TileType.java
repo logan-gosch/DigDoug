@@ -8,7 +8,7 @@ public enum TileType {
 	DIRT(2, true, "Dirt"),
 	SKY(3, false, "Sky"),
 	LAVA(4, true, "Lava"),
-	CLOUD(5, true, "Cloud"),
+	CLOUD(5, false, "Cloud"),
 	STONE(6, true, "Stone");
 	
 	public static final int TILE_SIZE = 16;

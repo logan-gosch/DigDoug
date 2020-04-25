@@ -13,12 +13,10 @@ public class Player extends Entity {
 	private static final int JUMP_VELOCITY = 5;
 	
 	Texture image;
-	
-	@Override
-	public void create (EntitySnapshot snapshot, EntityType type, GameMap map) {
-		super.create(snapshot, type, map);
-		image = new Texture("C:\\Users\\Logan\\Documents\\GitHub\\PlatformerTutorial\\core\\assets\\player.png");
-		/*spawnRadius = snapshot.getFloat("spawnRadius", 50);*/
+
+	public Player (float x, float y, GameMap map) {
+		super(x, y, EntityType.PLAYER, map);
+		image = new Texture("C:\\Users\\Logan\\Documents\\GitHub\\DigDoug\\core\\assets\\player.png");
 	}
 	
 	@Override
@@ -40,13 +38,6 @@ public class Player extends Entity {
 	@Override
 	public void render(SpriteBatch batch) {
 		batch.draw(image, pos.x, pos.y, getWidth(), getHeight());
-	}
-	
-	@Override
-	public EntitySnapshot getSaveSnapshot() {
-		EntitySnapshot snapshot = super.getSaveSnapshot();
-		//snapshot.putFloat("spawnRadius", spawnRadius);
-		return snapshot;
 	}
 
 }
