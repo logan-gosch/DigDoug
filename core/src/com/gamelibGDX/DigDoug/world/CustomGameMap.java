@@ -17,7 +17,7 @@ public class CustomGameMap extends GameMap {
 	private TextureRegion[][] tiles;
 	
 	public CustomGameMap () {
-		CustomGameMapData data = CustomGameMapLoader.loadMap("basic", "My Grass Lands!");
+		CustomGameMapData data = CustomGameMapLoader.loadMap("basic", "DigDoug");
 		this.id = data.id;
 		this.name = data.name;
 		this.map = data.map;

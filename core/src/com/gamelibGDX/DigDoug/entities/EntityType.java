@@ -42,19 +42,6 @@ public enum EntityType {
 		return weight;
 	}
 	
-	public static Entity createEntityUsingSnapshot (EntitySnapshot entitySnapshot, GameMap map) {
-		EntityType type = entityTypes.get(entitySnapshot.type);
-		try {
-			@SuppressWarnings("unchecked")
-			Entity entity = (Entity) ClassReflection.newInstance(type.loaderClass);
-			entity.create(entitySnapshot, type, map);
-			return entity;
-		} catch (ReflectionException e) {
-			Gdx.app.error("Entity Loader", "Could not load entity of type " + type.id);
-			return null;
-		}
-	}
-	
 	private static HashMap<String, EntityType> entityTypes;
 	
 	static {
