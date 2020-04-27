@@ -45,6 +45,11 @@ public abstract class Entity {
 		if (!map.doesRectCollideWithMap(newX, pos.y, getWidth(), getHeight()))
 			this.pos.x = newX;
 	}
+	protected void moveY (float amount) {
+		float newY = pos.x + amount;
+		if (!map.doesRectCollideWithMap(newY, pos.x, getWidth(), getHeight()))
+			this.pos.x = newY;
+	}
 	
 	public Vector2 getPos() {
 		return pos;
