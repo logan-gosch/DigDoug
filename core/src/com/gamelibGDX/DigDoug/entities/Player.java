@@ -33,8 +33,11 @@ public class Player extends Entity {
 		
 		if (Gdx.input.isKeyPressed(Keys.RIGHT))
 			moveX(SPEED * deltaTime);
+
+		if (Gdx.input.isKeyPressed(Keys.DOWN))
+			moveY(SPEED * deltaTime);
 	}
-	
+
 	@Override
 	public void render(SpriteBatch batch) {
 		batch.draw(image, pos.x, pos.y, getWidth(), getHeight());
