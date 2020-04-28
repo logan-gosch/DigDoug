@@ -19,3 +19,7 @@
 ## Diagrams
 
 ### UML
+
+### Sequence
+
+### FlowChart
