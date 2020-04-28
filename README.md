@@ -14,10 +14,15 @@
 ## Diagrams
 
 ### UML
+<p align="center">
 <img src= "DigDougUML.png">
+</p>
 
 ### Sequence
+
+<p align="center">
 <img src= "sequenceChart.png">
+</p>
 
 ### FlowChart
 
