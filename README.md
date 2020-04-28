@@ -19,7 +19,7 @@
 ## Diagrams
 
 ### UML
-
+<img src= "DigDougUML.png">
 ### Sequence
 
 ### FlowChart
