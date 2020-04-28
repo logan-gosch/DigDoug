@@ -18,4 +18,6 @@
 
 ### Sequence
 <img src= "sequenceChart.png">
+
 ### FlowChart
+
