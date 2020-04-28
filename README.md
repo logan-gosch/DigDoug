@@ -21,4 +21,4 @@
 
 ### FlowChart
 
-<div align=”center”><img src="DigDougFlowChart.png"><div>
+<img src="DigDougFlowChart.png" align="center">
