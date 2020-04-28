@@ -34,3 +34,6 @@
 
 ## Project Status
 <p> After creation of DigDoug V1.0, there will likely be no newer updates to the project, due to the coder's busy schedule and utter lack of desire to continue this project.</p>
+
+## Acknowledgement
+<p> </p>
