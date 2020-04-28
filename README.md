@@ -17,5 +17,5 @@
 <img src= "DigDougUML.png">
 
 ### Sequence
-
+<img src= "sequenceChart.png">
 ### FlowChart
