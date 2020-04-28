@@ -5,3 +5,15 @@
 
 ## Motivation
 <p>Our motivation comes from the famous Atari game, DigDug, made by the Japanese company Namco. Our game shares the same general goal as DigDug does, but instead of eliminating enemies, your character is completely powerless and must instead escape them and shoot for the simpler goal of digging for minerals. </p>
+
+<br>
+
+## Installation
+
+<br>
+
+## Screenshots
+
+<br>
+
+## Diagrams
