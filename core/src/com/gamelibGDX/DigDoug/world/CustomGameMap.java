@@ -5,8 +5,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import com.gamelibGDX.DigDoug.entities.Player;
+import com.gamelibGDX.DigDoug.tools.CollisionRect;
 import com.gamelibGDX.DigDoug.world.custommap.CustomGameMapData;
 import com.gamelibGDX.DigDoug.world.custommap.CustomGameMapLoader;
+
+import java.util.ArrayList;
 
 public class CustomGameMap extends GameMap {
 	
