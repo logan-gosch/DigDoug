@@ -15,13 +15,14 @@ public class Player extends Entity {
 	public static final int WIDTH = 14;
 	public static final int HEIGHT = 32;
 
-	CollisionRect rect;
+	public CollisionRect rect;
 	Texture image;
 
 	public Player (float x, float y, GameMap map) {
 
 		super(x, y, EntityType.PLAYER, map);
-		image = new Texture("C:\\Users\\Logan\\Documents\\GitHub\\DigDoug\\core\\assets\\player.png");
+		image = new Texture("DOUG.gif");
+
 
 		this.rect = new CollisionRect(x, y, WIDTH, HEIGHT);
 	}
@@ -43,11 +44,17 @@ public class Player extends Entity {
 
 		if (Gdx.input.isKeyPressed(Keys.DOWN))
 			moveY(SPEED * deltaTime);
+
+		rect.move(getX(), getY());
 	}
 
 	@Override
 	public void render(SpriteBatch batch) {
 		batch.draw(image, pos.x, pos.y, getWidth(), getHeight());
+	}
+
+	public CollisionRect getCollisionRect(){
+		return rect;
 	}
 
 }
