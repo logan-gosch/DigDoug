@@ -6,11 +6,12 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.Game;
 
 import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.gamelibGDX.DigDoug.tools.GameCamera;
 import com.gamelibGDX.DigDoug.world.CustomGameMap;
 import com.gamelibGDX.DigDoug.world.GameMap;
-
 
 
 public class DigDoug extends Game {
@@ -37,12 +38,15 @@ public class DigDoug extends Game {
 		
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
-        
+
+        gCam = new GameCamera(WIDTH,HEIGHT);
+
         cam = new OrthographicCamera();
         cam.setToOrtho(false,w,h);
         cam.update();
 
         gameMap = new CustomGameMap();
+
 	}
 
     @Override

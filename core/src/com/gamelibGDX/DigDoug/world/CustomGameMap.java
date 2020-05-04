@@ -28,6 +28,7 @@ public class CustomGameMap extends GameMap {
 		this.name = data.name;
 		this.map = data.map;
 		
+
 		tiles = TextureRegion.split(new Texture("tiles.png"), TileType.TILE_SIZE, TileType.TILE_SIZE);
 	}
 	
