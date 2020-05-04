@@ -21,7 +21,7 @@ public class Player extends Entity {
 	public Player (float x, float y, GameMap map) {
 
 		super(x, y, EntityType.PLAYER, map);
-		image = new Texture("C:\\Users\\Logan\\Documents\\GitHub\\DigDoug\\core\\assets\\player.png");
+		image = new Texture("C:\\Users\\colea\\Desktop\\Java\\DigDoug\\core\\assets\\player.png");
 
 		this.rect = new CollisionRect(x, y, WIDTH, HEIGHT);
 	}
