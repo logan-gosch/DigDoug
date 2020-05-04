@@ -10,8 +10,7 @@ import com.gamelibGDX.DigDoug.world.TileType;
 
 public class CustomGameMapLoader {
 
-	private static Json json = new Json();
-	private static final int SIZE = 100;
+	private static final int SIZE = 50;
 	
 	public static CustomGameMapData generateRandomMap (String id, String name) {
 		CustomGameMapData mapData = new CustomGameMapData();
