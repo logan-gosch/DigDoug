@@ -1,18 +1,18 @@
 package com.gamelibGDX.DigDoug;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.Game;
 
 import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.gamelibGDX.DigDoug.tools.GameCamera;
 import com.gamelibGDX.DigDoug.world.CustomGameMap;
 import com.gamelibGDX.DigDoug.world.GameMap;
 
 
-
-public class DigDoug extends ApplicationAdapter {
+public class DigDoug extends Game {
 
     public static final int WIDTH = 480;
     public static final int HEIGHT = 720;
@@ -22,7 +22,8 @@ public class DigDoug extends ApplicationAdapter {
 	
     float deltaX, deltaY;
 
-    OrthographicCamera cam;
+    public OrthographicCamera cam;
+    public GameCamera gCam;
     
 	@Override
 	public void create () {
@@ -30,12 +31,15 @@ public class DigDoug extends ApplicationAdapter {
 		
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
-        
+
+        gCam = new GameCamera(WIDTH,HEIGHT);
+
         cam = new OrthographicCamera();
         cam.setToOrtho(false,w,h);
         cam.update();
 
         gameMap = new CustomGameMap();
+
 	}
 
     @Override
