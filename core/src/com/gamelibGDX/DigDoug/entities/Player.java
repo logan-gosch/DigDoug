@@ -44,9 +44,9 @@ public class Player extends Entity {
 
 		rect.move(getX(), getY());
 
-		if(rect.collidesWith(rect) == true)
+		if(rect.collidesWith(rect) == true && Gdx.input.isKeyJustPressed(Keys.DOWN))
 		{
-
+//			map.doesRectCollideWithMap() = false;
 		}
 	}
 

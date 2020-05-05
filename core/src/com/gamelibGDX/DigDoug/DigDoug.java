@@ -1,5 +1,6 @@
 package com.gamelibGDX.DigDoug;
 
+import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -12,6 +13,8 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.gamelibGDX.DigDoug.tools.GameCamera;
 import com.gamelibGDX.DigDoug.world.CustomGameMap;
 import com.gamelibGDX.DigDoug.world.GameMap;
+
+import javax.swing.*;
 
 
 public class DigDoug extends Game {
@@ -30,10 +33,6 @@ public class DigDoug extends Game {
 	@Override
 	public void create() {
 
-	    music = Gdx.audio.newMusic(Gdx.files.internal("D_O_U_G.mp3"));
-	    music.setLooping(true);
-	    music.play();
-
 		batch = new SpriteBatch();
 		
         float w = Gdx.graphics.getWidth();
@@ -44,7 +43,24 @@ public class DigDoug extends Game {
         cam.setToOrtho(false,w,h);
         cam.update();
 
-        gameMap = new CustomGameMap();
+
+        int selection;
+        boolean isYes;
+        boolean isNo;
+
+        selection = JOptionPane.showConfirmDialog(null, "Would you like to play DigDug?");
+        isYes = (selection == JOptionPane.YES_OPTION);
+        isNo = (selection == JOptionPane.NO_OPTION);
+        if(isYes == true){
+            gameMap = new CustomGameMap();
+        }
+        else if(isNo){
+            Gdx.app.exit();
+        }
+
+        music = Gdx.audio.newMusic(Gdx.files.internal("D_O_U_G.mp3"));
+        music.setLooping(true);
+        music.play();
 
 	}
 
