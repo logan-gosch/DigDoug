@@ -2,8 +2,6 @@ package com.gamelibGDX.DigDoug.world;
 
 import java.util.ArrayList;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -20,7 +18,7 @@ public abstract class GameMap {
 	
 	public GameMap() {
 		entities = new ArrayList<Entity>();
-		entities.add(new Player(200, 400, this));
+		entities.add(new Player(200, 425, this));
 	}
 	
 	public void render (OrthographicCamera camera, SpriteBatch batch) {
