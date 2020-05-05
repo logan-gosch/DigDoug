@@ -12,8 +12,6 @@ public class DesktopLauncher {
 	public static void main (String[] args) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		new LwjglApplication(new DigDoug(), config);
-		config.width = 1280;
-		config.height = 720;
 		int selection;
 		boolean isYes;
 		boolean isNo;

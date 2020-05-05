@@ -39,7 +39,6 @@ public class DigDoug extends Game {
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
 
-        gCam = new GameCamera(WIDTH,HEIGHT);
 
         cam = new OrthographicCamera();
         cam.setToOrtho(false,w,h);

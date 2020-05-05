@@ -72,9 +72,6 @@ public abstract class GameMap {
 					if (type != null && type.isCollidable()) {
 						return true;
 					}
-					else if(Gdx.input.isKeyJustPressed(Input.Keys.DOWN)){
-						return false;
-					}
 				}
 			}
 		}

@@ -43,6 +43,11 @@ public class Player extends Entity {
 			moveX(SPEED * deltaTime);
 
 		rect.move(getX(), getY());
+
+		if(rect.collidesWith(rect) == true)
+		{
+
+		}
 	}
 
 	protected void moveX (float amount) {
