@@ -5,8 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-import com.gamelibGDX.DigDoug.entities.Player;
-import com.gamelibGDX.DigDoug.tools.CollisionRect;
 import com.gamelibGDX.DigDoug.world.custommap.CustomGameMapData;
 import com.gamelibGDX.DigDoug.world.custommap.CustomGameMapLoader;
 
@@ -19,7 +17,8 @@ public class CustomGameMap extends GameMap {
 	int[][][] map;
 	
 	private TextureRegion[][] tiles;
-	
+
+
 	public CustomGameMap () {
 		CustomGameMapData data = CustomGameMapLoader.generateRandomMap("bruh", "DigDoug");
 		this.id = data.id;
@@ -52,6 +51,7 @@ public class CustomGameMap extends GameMap {
 	@Override
 	public void update(float delta) {
 		super.update(delta);
+
 	}
 
 	@Override
@@ -84,5 +84,6 @@ public class CustomGameMap extends GameMap {
 	public int getLayers() {
 		return map.length;
 	}
+
 
 }

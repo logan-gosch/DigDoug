@@ -9,11 +9,11 @@ import com.gamelibGDX.DigDoug.tools.CollisionRect;
 import com.gamelibGDX.DigDoug.world.GameMap;
 
 public class Player extends Entity {
-	
-	private static final int SPEED = 80;
+
 	private static final int JUMP_VELOCITY = 5;
 	public static final int WIDTH = 14;
 	public static final int HEIGHT = 32;
+	private static final int SPEED = 80;
 
 	public CollisionRect rect;
 	Texture image;
@@ -38,14 +38,29 @@ public class Player extends Entity {
 		
 		if (Gdx.input.isKeyPressed(Keys.LEFT))
 			moveX(-SPEED * deltaTime);
-		
+
 		if (Gdx.input.isKeyPressed(Keys.RIGHT))
 			moveX(SPEED * deltaTime);
 
-		if (Gdx.input.isKeyPressed(Keys.DOWN))
-			moveY(SPEED * deltaTime);
-
 		rect.move(getX(), getY());
+
+		if(rect.collidesWith(rect) == true && Gdx.input.isKeyJustPressed(Keys.DOWN))
+		{
+//			map.doesRectCollideWithMap() = false;
+		}
+	}
+
+	protected void moveX (float amount) {
+		float newX = pos.x + amount;
+		if (!map.doesRectCollideWithMap(newX, pos.y, getWidth(), getHeight())) {
+			this.pos.x = newX;
+		}
+	}
+
+	protected void moveY (float amount) {
+		float newY = pos.x + amount;
+		if (!map.doesRectCollideWithMap(newY, pos.x, getWidth(), getHeight()))
+			this.pos.x = newY;
 	}
 
 	@Override
