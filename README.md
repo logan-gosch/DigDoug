@@ -8,7 +8,7 @@
 
 ## Installation
 
-<p></p>
+<p>In the release section of the repository, download the .jar file. Launch the file using a Java Runetime Enviroment(JRE) 11 and up.  </p>
 
 ## Screenshots
 
