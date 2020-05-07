@@ -43,24 +43,11 @@ public class DigDoug extends Game {
         cam.setToOrtho(false,w,h);
         cam.update();
 
-
-        int selection;
-        boolean isYes;
-        boolean isNo;
-
-        selection = JOptionPane.showConfirmDialog(null, "Would you like to play DigDug?");
-        isYes = (selection == JOptionPane.YES_OPTION);
-        isNo = (selection == JOptionPane.NO_OPTION);
-        if(isYes == true){
-            gameMap = new CustomGameMap();
-        }
-        else if(isNo){
-            Gdx.app.exit();
-        }
-
         music = Gdx.audio.newMusic(Gdx.files.internal("D_O_U_G.mp3"));
         music.setLooping(true);
         music.play();
+
+        gameMap = new CustomGameMap();
 
 	}
 

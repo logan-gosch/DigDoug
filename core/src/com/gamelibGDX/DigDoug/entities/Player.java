@@ -8,9 +8,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.gamelibGDX.DigDoug.tools.CollisionRect;
 import com.gamelibGDX.DigDoug.world.GameMap;
 import com.gamelibGDX.DigDoug.world.TileType;
-import com.gamelibGDX.DigDoug.world.custommap.CustomGameMapData;
 import com.gamelibGDX.DigDoug.world.custommap.CustomGameMapLoader;
-import sun.awt.image.ImageDecoder;
+
 
 public class Player extends Entity {
 
@@ -56,10 +55,10 @@ public class Player extends Entity {
 		 * @return
 		 */
 
-//		if(map.doesRectCollideWithMap(pos.x, pos.y, getWidth(), getHeight()) && Gdx.input.isKeyJustPressed(Keys.DOWN))
-//		{
-//			map[1][getWidth()][getHeight()] = map[0][0][0];
-//		}
+		if(map.doesRectCollideWithMap(pos.x, pos.y, getWidth(), getHeight()) && Gdx.input.isKeyJustPressed(Keys.DOWN))
+		{
+
+		}
 	}
 
 	protected void moveX (float amount) {
