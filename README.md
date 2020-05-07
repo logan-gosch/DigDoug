@@ -25,7 +25,7 @@
 ### Sequence
 
 <p align="center">
-<img src= "sequenceChart.png">
+<img src= "DigDougSequenceChart.png">
 </p>
 
 ### FlowChart
