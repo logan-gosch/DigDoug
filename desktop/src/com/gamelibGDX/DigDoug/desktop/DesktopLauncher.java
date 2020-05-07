@@ -18,7 +18,7 @@ public class DesktopLauncher {
 		Object[] options = {"Play", "Leaderboard","Quit"};
 
 
-		selection = JOptionPane.showOptionDialog(null, "Would you like to play DigDug?", "Dig Doug", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, logo, options, options[2]);
+		selection = JOptionPane.showOptionDialog(null, "Would you like to play DigDoug?", "Dig Doug", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, logo, options, options[2]);
 		if(selection == JOptionPane.YES_OPTION){
 			new LwjglApplication((ApplicationListener) new DigDoug(), config);
 		}
