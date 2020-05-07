@@ -7,6 +7,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import com.gamelibGDX.DigDoug.tools.CollisionRect;
 import com.gamelibGDX.DigDoug.world.GameMap;
+import com.gamelibGDX.DigDoug.world.TileType;
+import com.gamelibGDX.DigDoug.world.custommap.CustomGameMapLoader;
+
 
 public class Player extends Entity {
 
@@ -44,9 +47,17 @@ public class Player extends Entity {
 
 		rect.move(getX(), getY());
 
-		if(rect.collidesWith(rect) == true && Gdx.input.isKeyJustPressed(Keys.DOWN))
+		/**
+		 * Gets a tile at its coordinate within the map at a specified layer.
+		 * @param layer
+		 * @param col
+		 * @param row
+		 * @return
+		 */
+
+		if(map.doesRectCollideWithMap(pos.x, pos.y, getWidth(), getHeight()) && Gdx.input.isKeyJustPressed(Keys.DOWN))
 		{
-//			map.doesRectCollideWithMap() = false;
+
 		}
 	}
 

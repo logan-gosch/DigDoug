@@ -1,5 +1,6 @@
 package com.gamelibGDX.DigDoug.desktop;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.ApplicationListener;
@@ -12,8 +13,6 @@ public class DesktopLauncher {
 		ImageIcon logo = new ImageIcon("logo.png");
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
-		config.width = 1280;
-		config.height = 720;
 		int selection;
 		Object[] options = {"Play", "Leaderboard","Quit"};
 
@@ -23,7 +22,7 @@ public class DesktopLauncher {
 			new LwjglApplication((ApplicationListener) new DigDoug(), config);
 		}
 		else if(selection != JOptionPane.YES_OPTION && selection != JOptionPane.NO_OPTION){
-			JOptionPane.showMessageDialog(null, "Coward");
+			Gdx.app.exit();
 		}
 		else if(selection == JOptionPane.NO_OPTION){
 			JOptionPane.showMessageDialog(null, "In Progress, leave me alone.");

@@ -2,6 +2,8 @@ package com.gamelibGDX.DigDoug.world;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -70,6 +72,9 @@ public abstract class GameMap {
 					if (type != null && type.isCollidable()) {
 						return true;
 					}
+//					else if (type != null && Gdx.input.isKeyJustPressed(Input.Keys.DOWN)) {
+//						getTileTypeByCoordinate(layer, col, row) == ;
+//					}
 				}
 			}
 		}
