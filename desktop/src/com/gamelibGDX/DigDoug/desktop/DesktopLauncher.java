@@ -11,6 +11,7 @@ public class DesktopLauncher {
 	public static void main (String[] args) {
 		ImageIcon logo = new ImageIcon("logo.png");
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+
 		config.width = 1280;
 		config.height = 720;
 		int selection;
