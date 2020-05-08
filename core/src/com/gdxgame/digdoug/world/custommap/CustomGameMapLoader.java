@@ -25,7 +25,17 @@ public class CustomGameMapLoader {
 				mapData.map[0][row][col] = TileType.SKY.getId();
 
 				if (random.nextInt(50) == 0 && row > SIZE - 20) {
-					mapData.map[1][row][col] = TileType.CRYSTAL.getId();
+					if(random.nextInt(3) == 1) {
+						mapData.map[1][row][col] = TileType.CRYSTAL.getId();
+					}
+					else if(random.nextInt(2) == 1)
+					{
+						mapData.map[1][row][col] = TileType.CRYSTAL2.getId();
+					}
+					else
+					{
+						mapData.map[1][row][col] = TileType.CRYSTAL3.getId();
+					}
 				} else if (row > SIZE - 2) {
 					mapData.map[1][row][col] = TileType.BEDROCK.getId();
 				} else if (row > SIZE - 20) {
