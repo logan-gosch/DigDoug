@@ -4,7 +4,7 @@
 <br>
 
 ## Motivation
-<p>Our motivation comes from the famous Atari game, DigDug, made by the Japanese company Namco. Our game shares the same general goal as DigDug does, but instead of eliminating enemies, your character is completely powerless and must instead escape them and shoot for the simpler goal of digging for minerals. </p>
+<p>Our motivation comes from the famous Atari game, DigDug, made by the Japanese company Namco. Our game shares the same general goal as DigDug does, but instead of eliminating enemies, your character is running against the clock.</p>
 
 ## Installation
 
@@ -25,7 +25,7 @@
 ### Sequence
 
 <p align="center">
-<img src= "sequenceChart.png">
+<img src= "DigDougSequenceChart.png">
 </p>
 
 ### FlowChart
