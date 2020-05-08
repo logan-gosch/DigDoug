@@ -20,7 +20,7 @@ public class DesktopLauncher {
 		selection = JOptionPane.showOptionDialog(null, "Would you like to play DigDoug?", "Dig Doug", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, logo, options, options[2]);
 		if (selection == JOptionPane.YES_OPTION) {
 			new LwjglApplication((ApplicationListener) new DigDoug(), config);
-		} else if (selection != JOptionPane.YES_OPTION && selection != JOptionPane.NO_OPTION) {
+		} else if (selection == JOptionPane.CANCEL_OPTION) {
 			Gdx.app.exit();
 		} else if (selection == JOptionPane.NO_OPTION) {
 			JOptionPane.showMessageDialog(null, "In Progress, leave me alone.");
