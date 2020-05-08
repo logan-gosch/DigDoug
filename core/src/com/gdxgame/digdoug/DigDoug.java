@@ -56,11 +56,9 @@ public class DigDoug extends Game {
         gameMap.render(cam, batch);
         hud.stage.draw();
 
-
-
         super.render();
 	}
-	
+
 	@Override
 	public void dispose () {
 		batch.dispose();
