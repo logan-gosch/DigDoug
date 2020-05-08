@@ -55,6 +55,9 @@ public class CustomGameMap extends GameMap {
 
 		super.render(camera, batch);
 		batch.end();
+
+		batch.setProjectionMatrix(hud.stage.getCamera().combined);
+		hud.stage.draw();
 	}
 
 	public void update(float delta) {
@@ -62,7 +65,9 @@ public class CustomGameMap extends GameMap {
 		hud.update(delta);
 	}
 
-	public void dispose() {}
+	public void dispose() {
+		hud.dispose();
+	}
 	
 	public TileType getTileTypeByLocation(int layer, float x, float y) {
 		return this.getTileTypeByCoordinate(layer, (int) (x / TileType.TILE_SIZE), getHeight() - (int) (y / TileType.TILE_SIZE) - 1);

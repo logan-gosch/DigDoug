@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.gdxgame.digdoug.world.CustomGameMap;
 import com.gdxgame.digdoug.world.GameMap;
-import com.gdxgame.digdoug.screens.Hud;
+
 
 
 public class DigDoug extends Game {
@@ -19,7 +19,6 @@ public class DigDoug extends Game {
 	Music music;
     OrthographicCamera cam;
     float deltaX, deltaY;
-    public Hud hud;
 
 
 	@Override
@@ -39,7 +38,6 @@ public class DigDoug extends Game {
         music.play();
 
         gameMap = new CustomGameMap(this);
-        hud = new Hud(this.batch);
 
 	}
 
@@ -52,9 +50,8 @@ public class DigDoug extends Game {
 
         cam.update();
         gameMap.update(Gdx.graphics.getDeltaTime());
-        batch.setProjectionMatrix(hud.stage.getCamera().combined);
         gameMap.render(cam, batch);
-        hud.stage.draw();
+
 
         super.render();
 	}
@@ -64,6 +61,6 @@ public class DigDoug extends Game {
 		batch.dispose();
 		gameMap.dispose();
 		music.dispose();
-		hud.dispose();
+
 	}
 }

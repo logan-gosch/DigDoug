@@ -46,7 +46,7 @@ public class Hud implements Disposable{
 
         countdownLabel = new Label(String.format("%03d", worldTimer), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         timeLabel = new Label("TIME", new Label.LabelStyle(new BitmapFont(), Color.WHITE));
-        scoreLabel = new Label(String.format("%06d", score), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
+        scoreLabel = new Label(String.format("%03d", score), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         scoreNameLabel = new Label("SCORE", new Label.LabelStyle(new BitmapFont(), Color.WHITE));
 
         table.add(scoreNameLabel).expandX().padTop(10);
@@ -86,7 +86,7 @@ public class Hud implements Disposable{
     }
     public void addScore(int value){
         score += value;
-        scoreLabel.setText(String.format("%06d", score));
+        scoreLabel.setText(String.format("%03d", score));
 
     }
 
