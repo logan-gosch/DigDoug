@@ -10,6 +10,7 @@ import com.gdxgame.digdoug.world.custommap.CustomGameMapLoader;
 import com.gdxgame.digdoug.screens.Hud;
 
 
+
 public class CustomGameMap extends GameMap {
 	
 	String id;
@@ -17,13 +18,10 @@ public class CustomGameMap extends GameMap {
 	int[][][] map;
 
 	public DigDoug game;
-	public Hud hud;
 	
 	private TextureRegion[][] tiles;
 
-
-
-
+	private Hud hud;
 
 	public CustomGameMap (DigDoug game) {
 
@@ -32,8 +30,8 @@ public class CustomGameMap extends GameMap {
 		this.name = data.name;
 		this.map = data.map;
 
-		hud = new Hud(game.batch);
 		this.game = game;
+		hud = new Hud(game.batch);
 
 
 		tiles = TextureRegion.split(new Texture("newTiles.png"), TileType.TILE_SIZE, TileType.TILE_SIZE);
@@ -57,15 +55,19 @@ public class CustomGameMap extends GameMap {
 
 		super.render(camera, batch);
 		batch.end();
+
+		batch.setProjectionMatrix(hud.stage.getCamera().combined);
+		hud.stage.draw();
 	}
 
 	public void update(float delta) {
 		super.update(delta);
 		hud.update(delta);
-
 	}
 
-	public void dispose() {}
+	public void dispose() {
+		hud.dispose();
+	}
 	
 	public TileType getTileTypeByLocation(int layer, float x, float y) {
 		return this.getTileTypeByCoordinate(layer, (int) (x / TileType.TILE_SIZE), getHeight() - (int) (y / TileType.TILE_SIZE) - 1);
