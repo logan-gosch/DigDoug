@@ -5,16 +5,17 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.gdxgame.digdoug.tools.CollisionRect;
 import com.gdxgame.digdoug.world.GameMap;
+import com.gdxgame.digdoug.world.TileType;
+import com.gdxgame.digdoug.world.custommap.CustomGameMapData;
 
 
 public class Player extends Entity {
 
-	private static final int JUMP_VELOCITY = 5;
-	public static final int WIDTH = 14;
-	public static final int HEIGHT = 32;
+	private static final int JUMP_VELOCITY = 10;
 	private static final int SPEED = 80;
 
 	public CollisionRect rect;
@@ -23,10 +24,7 @@ public class Player extends Entity {
 	public Player (float x, float y, GameMap map) {
 
 		super(x, y, EntityType.PLAYER, map);
-
 		image = new Texture("DOUG.gif");
-
-		this.rect = new CollisionRect(x, y, WIDTH, HEIGHT);
 	}
 	
 	@Override
@@ -35,28 +33,22 @@ public class Player extends Entity {
 			this.velocityY += JUMP_VELOCITY * getWeight();
 		else if (Gdx.input.isKeyPressed(Keys.SPACE) && !grounded && this.velocityY > 0)
 			this.velocityY += JUMP_VELOCITY * getWeight() * deltaTime;
-		
-		super.update(deltaTime, gravity);//Apply gravity
-		
-		if (Gdx.input.isKeyPressed(Keys.LEFT))
-			moveX(-SPEED * deltaTime);
 
-		if (Gdx.input.isKeyPressed(Keys.RIGHT))
-			moveX(SPEED * deltaTime);
-
-		rect.move(getX(), getY());
-
-		/**
-		 * Gets a tile at its coordinate within the map at a specified layer.
-		 * @param layer
-		 * @param col
-		 * @param row
-		 * @return
-		 */
-
-		if(map.doesRectCollideWithMap(pos.x, pos.y, getWidth(), getHeight()) && Gdx.input.isKeyJustPressed(Keys.DOWN))
+		if (Gdx.input.isKeyPressed(Keys.UP)) {
+			moveY(SPEED * deltaTime);
+		}
+		if(Gdx.input.isKeyJustPressed(Keys.DOWN))
 		{
+			moveY(SPEED * deltaTime);
+		}
 
+		super.update(deltaTime, gravity);//Apply gravity
+
+		if (Gdx.input.isKeyPressed(Keys.LEFT)) {
+			moveX(-SPEED * deltaTime);
+		}
+		if (Gdx.input.isKeyPressed(Keys.RIGHT)) {
+			moveX(SPEED * deltaTime);
 		}
 	}
 
@@ -68,9 +60,9 @@ public class Player extends Entity {
 	}
 
 	protected void moveY (float amount) {
-		float newY = pos.x + amount;
+		float newY = pos.y + amount;
 		if (!map.doesRectCollideWithMap(newY, pos.x, getWidth(), getHeight()))
-			this.pos.x = newY;
+			this.pos.y = newY;
 	}
 
 	@Override

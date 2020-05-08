@@ -22,10 +22,10 @@ public abstract class Entity {
 	
 	public void update (float deltaTime, float gravity) {
 		float newY = pos.y;
-		
+
 		this.velocityY += gravity * deltaTime * getWeight();
 		newY += this.velocityY * deltaTime;
-		
+
 		if (map.doesRectCollideWithMap(pos.x, newY, getWidth(), getHeight())) {
 			if (velocityY < 0) {
 				this.pos.y = (float) Math.floor(pos.y);

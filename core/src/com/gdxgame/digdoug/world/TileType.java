@@ -1,5 +1,7 @@
 package com.gdxgame.digdoug.world;
 
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+
 import java.util.HashMap;
 
 public enum TileType {
