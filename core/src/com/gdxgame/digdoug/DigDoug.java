@@ -18,7 +18,6 @@ public class DigDoug extends Game {
     GameMap gameMap;
 	Music music;
     OrthographicCamera cam;
-
     float deltaX, deltaY;
 
 	@Override
@@ -31,7 +30,7 @@ public class DigDoug extends Game {
 
 
         cam = new OrthographicCamera();
-        cam.setToOrtho(false,w,h);
+        cam.setToOrtho(false, w, h);
         cam.update();
 
         music = Gdx.audio.newMusic(Gdx.files.internal("D_O_U_G.mp3"));
@@ -44,7 +43,7 @@ public class DigDoug extends Game {
 
     @Override
 	public void render () {
-        Gdx.gl.glClearColor(1, 0, 0, 1);
+        Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         

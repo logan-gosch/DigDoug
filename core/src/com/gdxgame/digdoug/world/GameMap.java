@@ -75,9 +75,6 @@ public abstract class GameMap {
 					if (type != null && type.isCollidable()) {
 						return true;
 					}
-					else if (type != null && Gdx.input.isKeyJustPressed(Input.Keys.DOWN)) {
-						mapData.map[1][row][col] = TileType.SKY.getId();
-					}
 				}
 			}
 		}

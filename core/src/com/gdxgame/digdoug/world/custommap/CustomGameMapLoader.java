@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class CustomGameMapLoader {
 
-	private static final int SIZE = 50;
+	private static final int SIZE = 30;
 	
 	public static CustomGameMapData generateRandomMap (String id, String name) {
 		CustomGameMapData mapData = new CustomGameMapData();
@@ -21,12 +21,12 @@ public class CustomGameMapLoader {
 			for (int col = 0; col < SIZE; col++) {
 				mapData.map[0][row][col] = TileType.SKY.getId();
 
-				if (row > SIZE - 2) {
+				if (random.nextInt(50) == 0 && row > SIZE - 25) {
+					mapData.map[1][row][col] = TileType.CRYSTAL.getId();
+				} else if (row > SIZE - 2) {
 					mapData.map[1][row][col] = TileType.BEDROCK.getId();
 				} else if (row > SIZE - 25) {
 					mapData.map[1][row][col] = TileType.DIRT.getId();
-				} else if (row > SIZE - 25 && random.nextInt(10) == 0) {
-					mapData.map[1][random.nextInt(10)][random.nextInt(10)] = TileType.CRYSTAL.getId();
 				} else if (row > SIZE - 26) {
 					mapData.map[1][row][col] = TileType.GRASS.getId();
 				} else {
