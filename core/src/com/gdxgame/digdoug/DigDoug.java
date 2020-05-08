@@ -13,6 +13,7 @@ import com.gdxgame.digdoug.world.CustomGameMap;
 import com.gdxgame.digdoug.world.GameMap;
 
 
+
 public class DigDoug extends Game {
 
     public SpriteBatch batch;
@@ -24,14 +25,14 @@ public class DigDoug extends Game {
     OrthographicCamera cam;
     float deltaX, deltaY;
 
+
 	@Override
 	public void create() {
 
 		batch = new SpriteBatch();
-		
+
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
-
 
         cam = new OrthographicCamera();
         cam.setToOrtho(false, w, h);
@@ -41,7 +42,7 @@ public class DigDoug extends Game {
         music.setLooping(true);
         music.play();
 
-        gameMap = new CustomGameMap();
+        gameMap = new CustomGameMap(this);
 
 	}
 
@@ -51,17 +52,19 @@ public class DigDoug extends Game {
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+        cam.update();
         gameMap.update(Gdx.graphics.getDeltaTime());
         gameMap.render(cam, batch);
+
+
+        super.render();
 	}
-	
+
 	@Override
 	public void dispose () {
 		batch.dispose();
 		gameMap.dispose();
 		music.dispose();
+
 	}
-
 }
-
-
