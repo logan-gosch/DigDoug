@@ -20,14 +20,14 @@ public class DigDoug extends Game {
     OrthographicCamera cam;
     float deltaX, deltaY;
 
+
 	@Override
 	public void create() {
 
 		batch = new SpriteBatch();
-		
+
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
-
 
         cam = new OrthographicCamera();
         cam.setToOrtho(false, w, h);
@@ -37,7 +37,7 @@ public class DigDoug extends Game {
         music.setLooping(true);
         music.play();
 
-        gameMap = new CustomGameMap();
+        gameMap = new CustomGameMap(this);
 
 	}
 
