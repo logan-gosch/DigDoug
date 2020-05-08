@@ -44,8 +44,8 @@
 <p> After creation of DigDoug V1.0, there will likely be no newer updates to the project, due to the coder's busy schedule and utter lack of desire to continue this project.</p>
 
 ## Acknowledgement
-<p> https://github.com/cole-giles<br>
-https://github.com/logan-gosch <br>
-https://github.com/NoahGiles<br>
-https://github.com/122L<br>
+<p><b>Cole :</b> https://github.com/cole-giles<br>
+  <b>Logan :</b> https://github.com/logan-gosch <br>
+  <b>Noah :</b> https://github.com/NoahGiles<br>
+  <b>Orion:</b> https://github.com/122L<br>
 </p>
