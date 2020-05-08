@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class CustomGameMapLoader {
 
-	private static final int SIZE = 30;
+	private static final int SIZE = 50;
 	
 	public static CustomGameMapData generateRandomMap (String id, String name) {
 		CustomGameMapData mapData = new CustomGameMapData();

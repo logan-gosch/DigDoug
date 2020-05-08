@@ -17,14 +17,16 @@ public class CustomGameMap extends GameMap {
 	int[][][] map;
 
 	public DigDoug game;
-	private Hud hud;
+	public Hud hud;
 	
 	private TextureRegion[][] tiles;
 
 
 
 
+
 	public CustomGameMap (DigDoug game) {
+
 		CustomGameMapData data = CustomGameMapLoader.generateRandomMap("bruh", "DigDoug");
 		this.id = data.id;
 		this.name = data.name;
@@ -40,7 +42,8 @@ public class CustomGameMap extends GameMap {
 	public void render(OrthographicCamera camera, SpriteBatch batch) {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
-		
+
+
 		for (int layer = 0; layer < getLayers(); layer++) {
 			for (int row = 0; row < getHeight(); row++) {
 				for (int col = 0; col < getWidth(); col++) {
@@ -50,7 +53,8 @@ public class CustomGameMap extends GameMap {
 				}
 			}
 		}
-		
+
+
 		super.render(camera, batch);
 		batch.end();
 	}
