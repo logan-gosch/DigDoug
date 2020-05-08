@@ -47,5 +47,5 @@
 <p><b>Cole :</b> https://github.com/cole-giles<br>
   <b>Logan :</b> https://github.com/logan-gosch <br>
   <b>Noah :</b> https://github.com/NoahGiles<br>
-  <b>Orion:</b> https://github.com/122L<br>
+  <b>Orion :</b> https://github.com/122L<br>
 </p>
