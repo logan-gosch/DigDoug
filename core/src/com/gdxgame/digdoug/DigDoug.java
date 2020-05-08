@@ -6,9 +6,9 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import com.gdxgame.digdoug.world.CustomGameMap;
 import com.gdxgame.digdoug.world.GameMap;
+import com.gdxgame.digdoug.screens.Hud;
 
 
 public class DigDoug extends Game {
@@ -19,15 +19,16 @@ public class DigDoug extends Game {
 	Music music;
     OrthographicCamera cam;
     float deltaX, deltaY;
+    public Hud hud;
+
 
 	@Override
 	public void create() {
 
 		batch = new SpriteBatch();
-		
+
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
-
 
         cam = new OrthographicCamera();
         cam.setToOrtho(false, w, h);
@@ -37,7 +38,8 @@ public class DigDoug extends Game {
         music.setLooping(true);
         music.play();
 
-        gameMap = new CustomGameMap();
+        gameMap = new CustomGameMap(this);
+        hud = new Hud(this.batch);
 
 	}
 
@@ -46,10 +48,17 @@ public class DigDoug extends Game {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        
+
+
         cam.update();
         gameMap.update(Gdx.graphics.getDeltaTime());
+        batch.setProjectionMatrix(hud.stage.getCamera().combined);
         gameMap.render(cam, batch);
+        hud.stage.draw();
+
+
+
+        super.render();
 	}
 	
 	@Override
@@ -57,8 +66,6 @@ public class DigDoug extends Game {
 		batch.dispose();
 		gameMap.dispose();
 		music.dispose();
+		hud.dispose();
 	}
-
 }
-
-

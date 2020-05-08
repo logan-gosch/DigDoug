@@ -4,8 +4,10 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.gdxgame.digdoug.DigDoug;
 import com.gdxgame.digdoug.world.custommap.CustomGameMapData;
 import com.gdxgame.digdoug.world.custommap.CustomGameMapLoader;
+import com.gdxgame.digdoug.screens.Hud;
 
 
 public class CustomGameMap extends GameMap {
@@ -13,16 +15,26 @@ public class CustomGameMap extends GameMap {
 	String id;
 	String name;
 	int[][][] map;
+
+	public DigDoug game;
+	public Hud hud;
 	
 	private TextureRegion[][] tiles;
 
 
-	public CustomGameMap () {
+
+
+
+	public CustomGameMap (DigDoug game) {
+
 		CustomGameMapData data = CustomGameMapLoader.generateRandomMap("bruh", "DigDoug");
 		this.id = data.id;
 		this.name = data.name;
 		this.map = data.map;
-		
+
+		hud = new Hud(game.batch);
+		this.game = game;
+
 
 		tiles = TextureRegion.split(new Texture("newTiles.png"), TileType.TILE_SIZE, TileType.TILE_SIZE);
 	}
@@ -30,7 +42,8 @@ public class CustomGameMap extends GameMap {
 	public void render(OrthographicCamera camera, SpriteBatch batch) {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
-		
+
+
 		for (int layer = 0; layer < getLayers(); layer++) {
 			for (int row = 0; row < getHeight(); row++) {
 				for (int col = 0; col < getWidth(); col++) {
@@ -40,13 +53,15 @@ public class CustomGameMap extends GameMap {
 				}
 			}
 		}
-		
+
+
 		super.render(camera, batch);
 		batch.end();
 	}
 
 	public void update(float delta) {
 		super.update(delta);
+		hud.update(delta);
 
 	}
 
