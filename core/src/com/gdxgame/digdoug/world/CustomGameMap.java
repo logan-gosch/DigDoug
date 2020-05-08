@@ -34,7 +34,7 @@ public class CustomGameMap extends GameMap {
 		hud = new Hud(game.batch);
 
 
-		tiles = TextureRegion.split(new Texture("newTiles.png"), TileType.TILE_SIZE, TileType.TILE_SIZE);
+		tiles = TextureRegion.split(new Texture("newerTiles.png"), TileType.TILE_SIZE, TileType.TILE_SIZE);
 	}
 	
 	public void render(OrthographicCamera camera, SpriteBatch batch) {

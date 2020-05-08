@@ -9,6 +9,8 @@ public enum TileType {
 	GRASS(1, true, "Grass"),
 	DIRT(2, true, "Dirt"),
 	CRYSTAL(3, true, "Crystal"),
+	CRYSTAL2(7, true, "Crystal2"),
+	CRYSTAL3(8, true, "Crystal3"),
 	BEDROCK(4, true, "Bedrock"),
 	SKY(5, false, "Sky"),
 	CLOUD(6, false, "Cloud");
