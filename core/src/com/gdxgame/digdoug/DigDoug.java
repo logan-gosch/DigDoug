@@ -6,6 +6,9 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 import com.gdxgame.digdoug.world.CustomGameMap;
 import com.gdxgame.digdoug.world.GameMap;
 
@@ -14,6 +17,8 @@ import com.gdxgame.digdoug.world.GameMap;
 public class DigDoug extends Game {
 
     public SpriteBatch batch;
+    private Viewport viewport;
+
 
     GameMap gameMap;
 	Music music;
@@ -46,7 +51,6 @@ public class DigDoug extends Game {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
 
         cam.update();
         gameMap.update(Gdx.graphics.getDeltaTime());

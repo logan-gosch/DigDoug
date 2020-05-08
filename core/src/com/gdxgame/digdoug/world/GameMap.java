@@ -1,29 +1,22 @@
 package com.gdxgame.digdoug.world;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import com.badlogic.gdx.math.Vector2;
-import com.gamelibGDX.DigDoug.tools.Time;
 import com.gdxgame.digdoug.entities.Entity;
 import com.gdxgame.digdoug.entities.Player;
-import com.gdxgame.digdoug.world.custommap.CustomGameMapData;
 
 import java.util.ArrayList;
 
 
 public abstract class GameMap {
-
-	CustomGameMapData mapData = new CustomGameMapData();
 	
 	protected ArrayList<Entity> entities;
 	public static int deltaTime;
 	
 	public GameMap() {
 		entities = new ArrayList<Entity>();
-		entities.add(new Player(200, 425, this));
+		entities.add(new Player(200, 350, this));
 	}
 	
 	public void render (OrthographicCamera camera, SpriteBatch batch) {
@@ -36,8 +29,6 @@ public abstract class GameMap {
 		for (Entity entity : entities) {
 			entity.update(delta, -9.8f);
 		}
-		Time theDelta = new Time();
-		theDelta.setDelta(delta);
 	}
 	
 	public void dispose () {
@@ -75,6 +66,9 @@ public abstract class GameMap {
 					if (type != null && type.isCollidable()) {
 						return true;
 					}
+//					if (type != null && type.isCollidable() && doesRectCollideWithMap(x, y, width, height)) {
+//						map[1][getWidth()][getHeight()] =
+//					}
 				}
 			}
 		}
@@ -88,7 +82,7 @@ public abstract class GameMap {
 	public abstract int getWidth();
 	public abstract int getHeight();
 	public abstract int getLayers();
-	
+
 	public int getPixelWidth() {
 		return this.getWidth() * TileType.TILE_SIZE;
 	}

@@ -2,15 +2,11 @@ package com.gdxgame.digdoug.entities;
 
 import java.util.HashMap;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.utils.reflect.ClassReflection;
-import com.badlogic.gdx.utils.reflect.ReflectionException;
-
 
 @SuppressWarnings("rawtypes")
 public enum EntityType {
 	
-	PLAYER("player", Player.class, 14, 32, 40);
+	PLAYER("player", Player.class, 14, 16, 40);
 	
 	private String id;
 	private Class loaderClass;
@@ -28,15 +24,12 @@ public enum EntityType {
 	public String getId() {
 		return id;
 	}
-
 	public int getWidth() {
 		return width;
 	}
-
 	public int getHeight() {
 		return height;
 	}
-
 	public float getWeight() {
 		return weight;
 	}

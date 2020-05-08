@@ -46,8 +46,9 @@ public class CustomGameMap extends GameMap {
 			for (int row = 0; row < getHeight(); row++) {
 				for (int col = 0; col < getWidth(); col++) {
 					TileType type = this.getTileTypeByCoordinate(layer, col, row);
-					if (type != null)
+					if (type != null) {
 						batch.draw(tiles[0][type.getId() - 1], col * TileType.TILE_SIZE, row * TileType.TILE_SIZE);
+					}
 				}
 			}
 		}
@@ -83,14 +84,11 @@ public class CustomGameMap extends GameMap {
 	public int getWidth() {
 		return map[0][0].length;
 	}
-
 	public int getHeight() {
 		return map[0].length;
 	}
-
 	public int getLayers() {
 		return map.length;
 	}
-
 
 }
